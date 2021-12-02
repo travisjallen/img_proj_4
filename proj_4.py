@@ -56,11 +56,11 @@ canvas[origin_r:terminus_r,origin_c:terminus_c,:] = img_0[:,:,:]
 base_image = image_names[0]
 base_identifier = base_image.split('.')
 base_identifier = base_identifier[0]
-print(len(base_identifier))
+# print(len(base_identifier))
 
 nconstituents = corrs[0][1][0].split('.')
 nfirst_part = nconstituents[0]
-print(len(nfirst_part))
+# print(len(nfirst_part))
 
 for i in range(num_images - 1):
     ## determine if the relative order of the correlations
@@ -78,3 +78,34 @@ for i in range(num_images - 1):
         temp = corra[:,:,i]
         corra[:,:,i] = corrb[:,:,i]
         corrb[:,:,i] = temp
+
+    ## now set up the linear system
+
+    ## number of correspondences
+    N = 0
+    corra_shape = np.shape(corra)
+    for j in range(corra_shape[0]):
+        if (corra[j,0,i] != 0):
+            ## then this is a correspondence
+            N += 1
+    
+    ## initialize A matrix and b vector 
+    A = np.zeros((int(2*N),8))
+    b = np.zeros((int(2*N),1))
+
+    ## fill A matrix
+    A[0:N,0] = -corra[0:N,0,i]                  ## column 1, first half of rows
+    A[0:N,1] = -corra[0:N,1,i]                  ## column 2, first half of rows
+    A[0:N,2] = -1                               ## column 3, first half of rows
+    A[0:N,3:5] = 0                              ## columns 4-6, first half of rows
+    A[0:N,6] = corra[0:N,0,i]*corrb[0:N,0,i]    ## column 7, first half of rows
+    A[0:N,7] = corra[0:N,1,i]*corrb[0:N,0,i]    ## column 8, first half of rows
+
+    A[N:-1,0] = -corra[0:N,0,i]                 ## column 1, first half of rows
+    A[N:-1,1] = -corra[0:N,1,i]                 ## column 2, first half of rows
+    A[N:-1,2] = -1                              ## column 3, first half of rows
+    A[N:-1,3:5] = 0                             ## columns 4-6, first half of rows
+    A[N:-1,6] = corra[0:N,0,i]*corrb[0:N,0,i]   ## column 7, first half of rows
+    A[N:-1,7] = corra[0:N,1,i]*corrb[0:N,0,i]   ## column 8, first half of rows
+
+    print(A)

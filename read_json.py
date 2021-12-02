@@ -21,7 +21,7 @@ def read_json(filename):
 
 
     for i in range(len(corrs)):
-        # print(f"There are {len(corrs[i][0][1])} correspdondences between image {corrs[i][0][0]} and image {corrs[i][1][0]}")
+        print(f"There are {len(corrs[i][0][1])} correspdondences between image {corrs[i][0][0]} and image {corrs[i][1][0]}")
         corra[0:int(num_corrs[0,i]),:,i] = np.asarray(corrs[i][0][1])
         corrb[0:int(num_corrs[0,i]),:,i] = np.asarray(corrs[i][1][1])   
         # print(corra[:,:,i])
@@ -43,7 +43,7 @@ def read_json(filename):
     #     print(corrb.shape)
     # print(f"The output file is {data['Output file']}")
 
-    ## return the correlations and the image names
+    ## return the correspondences and the image names
     image_names = data['Input files']
 
     return corra,corrb,image_names,corrs
