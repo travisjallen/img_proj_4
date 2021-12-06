@@ -17,7 +17,7 @@ from read_json import read_json
 import functions
 
 ## read the json file
-corra,corrb,image_names,corrs = read_json("mosaic_params.json")
+corra,corrb,image_names,corrs = read_json("sign_params_4_mismatch.json")
 
 ## correct the image names
 for i in range(len(image_names)):
@@ -39,7 +39,7 @@ img_0_cols = img_0_size[1]
 num_images = len(image_names)
 
 ## establish a factor of safety
-fos = num_images + 4
+fos = num_images + 5
 canvas = np.zeros((fos*img_0_rows,fos*img_0_cols))
 # canvas[:,:,:] = 0.5
 
@@ -142,7 +142,7 @@ plt.figure(figsize=(12,7))
 plt.imshow(new_canvas,cmap='gray')
 plt.axis('off')
 plt.tight_layout()
-plt.savefig('test_images/no_hist_match.png')
+plt.savefig('test_images/sign_4_mismatch.png')
 plt.show()
 
 

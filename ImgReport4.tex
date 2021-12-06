@@ -22,6 +22,14 @@
 
 \section{Experiments}	
 	\subsection{Given Dataset}
+	I took the given images and formed the following mosaic. I have matched the contrast of the images with histogram matching (see section \ref{contrast} for more detail).
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/hist_match.png}
+		\caption{4 perspectively equivalent images made into a mosaic.}
+	\end{figure}
+	
 	
 	\newpage
 	
@@ -107,6 +115,7 @@
 
 \section{Details}
 	\subsection{Contrast}
+	\ref{contrast}
 	\textbf{A good algorithm should automatically adjust for major intensity differences.}
 	\vskip 10pt
 	To handle this I used the \texttt{skimage.exposure.match\_histograms} function to match all of the histograms to the first image that I read in to the program. Below are some results with and without histogram matching
