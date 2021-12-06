@@ -33,7 +33,7 @@ def read_json(filename):
         imagea = io.imread(imageNamea[0]+'.png')
         imageb = io.imread(imageNameb[0]+'.png')
         fig, ax = plt.subplots(1,2)
-        fig.set_size_inches(10.5,7.5)
+        fig.set_size_inches(10.5,6.5)
         ax[0].imshow(imagea)
         ax[0].scatter(corra[:,0,i],corra[:,1,i],c='#ff7f0e')
         ax[1].imshow(imageb)

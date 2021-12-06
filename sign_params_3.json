@@ -1,0 +1,11 @@
+{
+    "Input files": ["test_images/sign_0.ppm", "test_images/sign_1.ppm"],
+    "Correspondences":
+    [
+	[["test_images/sign_0.ppm",
+	  [[184, 165], [261, 251], [251, 339]]], 
+	 ["test_images/sign_1.ppm",
+	  [[207,  17], [290, 108], [278, 200]]]]
+    ],
+    "Output file": "mosaic_out.tif"
+}
