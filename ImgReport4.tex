@@ -1,0 +1,52 @@
+\documentclass[]{article}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{empheq}
+\usepackage{float}
+\usepackage[left=0.85in,top=0.85in,right=0.85in,bottom=0.85in]{geometry} % Document margins
+
+% Title Page
+\title{CS 6640 Project 4}
+\author{Travis Allen, u1056595}
+
+
+\begin{document}
+	\maketitle
+	
+	\newpage
+	\section{Preliminaries}
+
+	\vskip 10pt
+
+	\textbf{I chose to do project 4a: Image Mosaicing.} The code for this can be found in the \texttt{proj\_4.py} and \texttt{functions.py} files. \texttt{proj\_4.py} contains the actual algorithm developed to make a mosaic of greyscale images whose correspondences are documented in a \texttt{.json} file. \texttt{functions.py} contains some useful functions that would have otherwise crowded the \texttt{proj\_4.py} file. My solution to this project relies heavily on\texttt{numba}, so you must have that installed to run my code. I use it because it \emph{dramatically} speeds up the run time. 
+
+\section{Experiments}	
+	\subsection{Given Dataset}
+	\newpage
+	\subsection{Panoramic Images}
+	\subsection{Planar Images}
+	\subsection{Number of Correspondences}
+	\newpage
+	
+\section{Questions}
+	\subsection{How many control points does it take to get a `good' transformation between images?}
+	\subsection{How does the algorithm behave at the theoretical minimum of the number of control points?}
+	\subsection{From your experiments, how does the accuracy of the control points affect the results?}
+
+\section{Details}
+	\subsection{Contrast}
+	\subsection{Feathering}
+	\subsection{Image Size}
+	Initially, for $n$ number of images, I make a canvas that is $n+1$ times the size of the largest image so that I have enough room to work with when placing images in the mosaic. However, this often results in a canvas which is much larger than it needs to be. To return the canvas to a more reasonable size for viewing once the mosaic is complete, I execute the following procedure. I search through the large canvas to find the first and last rows and columns which contain only zero elements. I do this by using the \texttt{numpy.sum()} function on each row and column and checkign to see if it is equal to 0. The canvas consists of all zeros before I place images on it, so this method works by assuming that a row of all zeros contains no image information. I perform it this way because I figure that \texttt{numpy}'s vectorization is faster than my own implementation of computing the sum or individually inspecting every element in the image. 
+	\begin{itemize}
+	\item Place all of the images in a folder with a known path to the directory that contains \texttt{problem\_4.py}
+	\item Place all of the names of all of the images in a \texttt{.txt} file in the folder, with each name separated by a new line
+	\item Write the names of the folder and the file in lines \texttt{27} and \texttt{28} of \texttt{problem\_4.py}
+	\item Write the maximum size of the images in lines \texttt{21} and \texttt{22} of \texttt{problem\_4.py}
+	
+\end{itemize}
+
+
+
+\end{document}          
+

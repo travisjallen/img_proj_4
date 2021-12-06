@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from skimage import io
 
 def read_json(filename):
-    with open("mosaic_params.json") as f:
+    with open(filename) as f:
         data = json.load(f)
 
     # print(f"The images are {data['Input files']}")
