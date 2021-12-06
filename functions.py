@@ -18,7 +18,7 @@ def svd_solve(A,b):
         singular_values[i,i] = 1/s[i]
 
     ## Compute the inverse of A (@ is matrix multiply)
-    A_inv = v_transpose.T @ singular_values.T @ u.T
+    A_inv = v_transpose.transpose() @ singular_values.transpose() @ u.transpose()
 
     ## now solve for P's
     P = A_inv @ b
@@ -27,19 +27,40 @@ def svd_solve(A,b):
     P = np.append(P,1)
     return P
 
-@jit(nopython=True)
-def transform(number_of_elements,primed_coords,P):
-    for j in range(number_of_elements):
-        ## calculate starred coordinates from slide 39
-        x_star = P[0,0]*primed_coords[j,1] + P[0,1]*primed_coords[j,0] + P[0,2]
-        y_star = P[1,0]*primed_coords[j,1] + P[1,1]*primed_coords[j,0] + P[1,2]
-        z_star = P[2,0]*primed_coords[j,1] + P[2,1]*primed_coords[j,0] + 1
-        
-        ## calculate primed coordinates
-        primed_coords[j,1] = int(x_star/z_star)
-        primed_coords[j,0] = int(y_star/z_star)
-    
-    return primed_coords
+
+
+
+def transform(image,canvas,P,origin_r,origin_c):
+    '''Takes image, canvas, P matrix, location of image origin, and places perspectively equivalent transformed image on canvas.'''
+    ## make new coordinate arrays
+    x_prime = np.zeros(image.shape)
+    y_prime = np.zeros(image.shape)
+
+    ## loop through the original image
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            ## record the original coordinates in a homogeneous coordinate
+            original_coords = np.array([[j,i,1]]).transpose()
+
+            ## matrix multiply original coordinates by P
+            new_coords = P @ original_coords
+
+            ## Now divide by last coordinate for perspective equivalence. This will produce floats, so round then typecast to int when placing
+            new_coords = np.round(new_coords/new_coords[2])
+            
+            ## place the intensity at the old coords onto the location of the new coords
+            location_rows = origin_r + new_coords[1]
+            location_cols = origin_c + new_coords[0]
+            canvas[int(location_rows),int(location_cols)] = image[i,j]
+
+            ## record the location
+            y_prime[i,j] = new_coords[0]
+            x_prime[i,j] = new_coords[1]
+
+    return canvas,y_prime,x_prime
+
+
+
 
 @jit(nopython=True)
 def intensity_locations(current_image_size,primed_coords,current_image):

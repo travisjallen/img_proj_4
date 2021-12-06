@@ -103,9 +103,26 @@
 		\end{figure}
 		
 	\subsection{From your experiments, how does the accuracy of the control points affect the results?}
+		To test this, I swapped two control points in one of the two images being mosaiced. I did this for 4 control points and then for 10 and 12. 
 
 \section{Details}
 	\subsection{Contrast}
+	\textbf{A good algorithm should automatically adjust for major intensity differences.}
+	\vskip 10pt
+	To handle this I used the \texttt{skimage.exposure.match\_histograms} function to match all of the histograms to the first image that I read in to the program. Below are some results with and without histogram matching
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/no_hist_match.png}
+		\caption{Mosaic with no histogram matching. Differences in intensity are very obvious and distracting.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/hist_match.png}
+		\caption{Mosaic with histogram matching. Differences in intensity are much less severe and are in general less distracting.}
+	\end{figure}
+	
 	\subsection{Feathering}
 	\subsection{Image Size}
 	Initially, for $n$ number of images, I make a canvas that is $n+1$ times the size of the largest image so that I have enough room to work with when placing images in the mosaic. However, this often results in a canvas which is much larger than it needs to be. To return the canvas to a more reasonable size for viewing once the mosaic is complete, I execute the following procedure. I search through the large canvas to find the first and last rows and columns which contain only zero elements. I do this by using the \texttt{numpy.sum()} function on each row and column and checkign to see if it is equal to 0. The canvas consists of all zeros before I place images on it, so this method works by assuming that a row of all zeros contains no image information. I perform it this way because I figure that \texttt{numpy}'s vectorization is faster than my own implementation of computing the sum or individually inspecting every element in the image. 
