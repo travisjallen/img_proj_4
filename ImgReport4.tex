@@ -22,15 +22,86 @@
 
 \section{Experiments}	
 	\subsection{Given Dataset}
+	
 	\newpage
+	
 	\subsection{Panoramic Images}
+		I used the following panoramic images to see how the algorithm performs on them. I compared the results with 4 and 10 correspondence points.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/shelf_4_correspondences.png}
+		\caption{Bookshelf with 4 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/shelf_10_correspondences.png}
+		\caption{Bookshelf with 10 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
+	\end{figure}
+
 	\subsection{Planar Images}
+		I used the following planar images to see how the algorithm performs on them. To construct them, I simply took a single image and cropped it twice to keep different, but overlapping parts of the image. Here I used 4 and 12 correspondence points, shown below.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=6.5in]{test_images/sign_4_correspondences.png}
+			\caption{Trail sign with 4 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=6.5in]{test_images/sign_12_correspondences.png}
+			\caption{Trail sign with 12 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
+		\end{figure}
+	
 	\subsection{Number of Correspondences}
 	\newpage
 	
 \section{Questions}
 	\subsection{How many control points does it take to get a `good' transformation between images?}
 	\subsection{How does the algorithm behave at the theoretical minimum of the number of control points?}
+		The theoretical minimum number of correspondence points is 4 because that is the minimum possible number of points that allows the matrix below to have full rank. If this matrix has at least rank 8 and the number of rows is equal to the rank, then the system has an analytical solution. If the system has at least rank 8 and the number of rows is greater than the rank, then the system has a least-squares solution.
+		\[\left(\begin{array}{cccccccc}
+			-x_{1} & -y_{1} & -1 & 0 & 0 & 0 & x_{1} x_{1}^{\prime} & y_{1} x_{1}^{\prime} \\
+			-x_{2} & -y_{2} & -1 & 0 & 0 & 0 & x_{2} x_{2}^{\prime} & y_{2} x_{2}^{\prime} \\
+			-x_{3} & -y_{3} & -1 & 0 & 0 & 0 & x_{3} x_{3}^{\prime} & y_{3} x_{3}^{\prime} \\
+			-x_{4} & -y_{4} & -1 & 0 & 0 & 0 & x_{4} x_{4}^{\prime} & y_{4} x_{4}^{\prime} \\
+			0 & 0 & 0 & -x_{1} & -y_{1} & -1 & x_{1} y_{1}^{\prime} & y_{1} y_{1}^{\prime} \\
+			0 & 0 & 0 & -x_{2} & -y_{2} & -1 & x_{2} y_{2}^{\prime} & y_{2} y_{2}^{\prime} \\
+			0 & 0 & 0 & -x_{3} & -y_{3} & -1 & x_{3} y_{3}^{\prime} & y_{3} y_{3}^{\prime} \\
+			0 & 0 & 0 & -x_{4} & -y_{4} & -1 & x_{4} y_{4}^{\prime} & y_{4} y_{4}^{\prime}
+		\end{array}\right)\left(\begin{array}{c}
+			p_{11} \\
+			p_{12} \\
+			p_{13} \\
+			p_{21} \\
+			p_{23} \\
+			p_{23} \\
+			p_{31} \\
+			p_{32}
+		\end{array}\right)=\left(\begin{array}{c}
+			-x_{1}^{\prime} \\
+			-x_{2}^{\prime} \\
+			-x_{3}^{\prime} \\
+			-x_{4}^{\prime} \\
+			-y_{1}^{\prime} \\
+			-y_{2}^{\prime} \\
+			-y_{3}^{\prime} \\
+			-y_{4}^{\prime}
+		\end{array}\right)\]
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=6.5in]{test_images/sign_4_correspondences.png}
+			\caption{Trail sign with 4 correspondences.}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=6.5in]{test_images/sign_4_1_correspondences.png}
+			\caption{Trail sign with 4 different correspondences.}
+		\end{figure}
+		
 	\subsection{From your experiments, how does the accuracy of the control points affect the results?}
 
 \section{Details}

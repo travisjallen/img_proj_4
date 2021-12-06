@@ -8,6 +8,25 @@ def place_image(number_of_elements,canvas,primed_coords,origin_r,origin_c):
         canvas[int(origin_r + primed_coords[j,0]),int(origin_c + primed_coords[j,1])] = primed_coords[j,2]
     return canvas
 
+def svd_solve(A,b):
+    ## find SVD with numpy's svd
+    u,s,v_transpose = np.linalg.svd(A)
+
+    ## the S given by np.linalg.svd is a list but we want a diagonal matrix
+    singular_values = np.zeros(A.shape)
+    for i in range(int(np.amin(A.shape))):
+        singular_values[i,i] = 1/s[i]
+
+    ## Compute the inverse of A (@ is matrix multiply)
+    A_inv = v_transpose.T @ singular_values.T @ u.T
+
+    ## now solve for P's
+    P = A_inv @ b
+
+    ## add the homogeneous coordinate to the vector of P's and return it
+    P = np.append(P,1)
+    return P
+
 @jit(nopython=True)
 def transform(number_of_elements,primed_coords,P):
     for j in range(number_of_elements):

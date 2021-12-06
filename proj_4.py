@@ -65,93 +65,86 @@ nconstituents = corrs[0][1][0].split('.')
 nfirst_part = nconstituents[0]
 # print(len(nfirst_part))
 
-# for i in range(num_images - 1):
-#     ## determine if the relative order of the correlations
-#     img_name = corrs[i][1][0].split('.')
-#     img_identifier = img_name[0]
+for i in range(num_images - 1):
+    ## determine if the relative order of the correlations
+    img_name = corrs[i][1][0].split('.')
+    img_identifier = img_name[0]
     
-#     ## store the current image and some information about it
-#     current_image = io.imread(img_identifier+'.png',as_gray=True)
-#     current_image_size = np.shape(current_image)
+    ## store the current image and some information about it
+    current_image = io.imread(img_identifier+'.png',as_gray=True)
+    current_image_size = np.shape(current_image)
     
-#     ## check to see if the image has 3 characters before the dot
-#     if (len(img_identifier) == 3):
-#         ## if it does, pull the last one off
-#         img_identifier = img_identifier.rstrip(img_identifier[-1])
+    ## check to see if the image has 3 characters before the dot
+    if (len(img_identifier) == 3):
+        ## if it does, pull the last one off
+        img_identifier = img_identifier.rstrip(img_identifier[-1])
 
-#     ## now check to see if the base image is the second image in the correlation
-#     if (base_identifier == img_identifier):
-#         ## if so, swap the columns of the correlation
-#         temp = corra[:,:,i]
-#         corra[:,:,i] = corrb[:,:,i]
-#         corrb[:,:,i] = temp
+    ## now check to see if the base image is the second image in the correlation
+    if (base_identifier == img_identifier):
+        ## if so, swap the columns of the correlation
+        temp = corra[:,:,i]
+        corra[:,:,i] = corrb[:,:,i]
+        corrb[:,:,i] = temp
 
-#     ## now set up the linear system
+    ## now set up the linear system
 
-#     ## number of correspondences
-#     N = 0
-#     corra_shape = np.shape(corra)
-#     for j in range(corra_shape[0]):
-#         if (corra[j,0,i] != 0):
-#             ## then this is a correspondence
-#             N += 1
+    ## number of correspondences
+    N = 0
+    corra_shape = np.shape(corra)
+    for j in range(corra_shape[0]):
+        if (corra[j,0,i] != 0):
+            ## then this is a correspondence
+            N += 1
     
-#     ## initialize A matrix and b vector 
-#     A = np.zeros((int(2*N),8))
-#     b = np.zeros((int(2*N),1))
+    ## initialize A matrix and b vector 
+    A = np.zeros((int(2*N),8))
+    b = np.zeros((int(2*N),1))
 
-#     ## fill A matrix
-#     A[0:N,0] = -corra[0:N,0,i]                  ## column 1, first half of rows. -x
-#     A[0:N,1] = -corra[0:N,1,i]                  ## column 2, first half of rows. -y
-#     A[0:N,2] = -1                               ## column 3, first half of rows. -1
-#     A[0:N,3:5] = 0                              ## columns 4-6, first half of rows. 0's
-#     A[0:N,6] = corra[0:N,0,i]*corrb[0:N,0,i]    ## column 7, first half of rows. x*x'
-#     A[0:N,7] = corra[0:N,1,i]*corrb[0:N,0,i]    ## column 8, first half of rows. y*x'
+    ## fill A matrix
+    A[0:N,0] = -corra[0:N,0,i]                  ## column 1, first half of rows. -x
+    A[0:N,1] = -corra[0:N,1,i]                  ## column 2, first half of rows. -y
+    A[0:N,2] = -1                               ## column 3, first half of rows. -1
+    A[0:N,3:5] = 0                              ## columns 4-6, first half of rows. 0's
+    A[0:N,6] = corra[0:N,0,i]*corrb[0:N,0,i]    ## column 7, first half of rows. x*x'
+    A[0:N,7] = corra[0:N,1,i]*corrb[0:N,0,i]    ## column 8, first half of rows. y*x'
 
-#     A[N:2*N,0:2] = 0                            ## columns 1-3, second half of rows. 0's
-#     A[N:2*N,3] = -corra[0:N,0,i]                ## column 4, second half of rows. -x
-#     A[N:2*N,2] = -corra[0:N,0,i]                ## column 5, second half of rows. -y
-#     A[N:2*N,3:5] = -1                           ## columns 6, second half of rows. -1
-#     A[N:2*N,6] = corra[0:N,0,i]*corrb[0:N,1,i]  ## column 7, second half of rows. x*y'
-#     A[N:2*N,7] = corra[0:N,1,i]*corrb[0:N,1,i]  ## column 8, second half of rows. y*y'
+    A[N:2*N,0:2] = 0                            ## columns 1-3, second half of rows. 0's
+    A[N:2*N,3] = -corra[0:N,0,i]                ## column 4, second half of rows. -x
+    A[N:2*N,2] = -corra[0:N,0,i]                ## column 5, second half of rows. -y
+    A[N:2*N,3:5] = -1                           ## columns 6, second half of rows. -1
+    A[N:2*N,6] = corra[0:N,0,i]*corrb[0:N,1,i]  ## column 7, second half of rows. x*y'
+    A[N:2*N,7] = corra[0:N,1,i]*corrb[0:N,1,i]  ## column 8, second half of rows. y*y'
 
-#     ## fill b vector
-#     b[0:N,0] = -corrb[0:N,0,i]
-#     b[N:2*N,0] = -corrb[0:N,1,i]
+    ## fill b vector
+    b[0:N,0] = -corrb[0:N,0,i]
+    b[N:2*N,0] = -corrb[0:N,1,i]
 
-#     ## solve the system with pseudoinverse
-#     # A_inv = np.linalg.pinv(A)
-#     # p = A_inv.dot(b)
+    ## solve the system with SVD
+    p = functions.svd_solve(A,b)
     
-#     p = np.linalg.lstsq(A,b,rcond=None)
-#     p = p[0]
-#     print(p)
-#     ## make P matrix
-#     P = np.ones((3,3))
-#     P[0,:] = p[0:3,0].T
-#     P[1,:] = p[3:6,0].T
-#     P[2,0:2] = p[6:8,0].T
+    ## make P matrix
+    P = np.reshape(p,(-1,3))
     
-#     ## make matrix to store x', y', and intensity
-#     number_of_elements = current_image_size[0]*current_image_size[1]
-#     primed_coords = np.zeros((number_of_elements,3))
-#     count = 0
+    ## make matrix to store x', y', and intensity
+    number_of_elements = current_image_size[0]*current_image_size[1]
+    primed_coords = np.zeros((number_of_elements,3))
+    count = 0
     
-#     ## store the coordinates and intensities
-#     primed_coords = functions.intensity_locations(current_image_size,primed_coords,current_image)
+    ## store the coordinates and intensities
+    primed_coords = functions.intensity_locations(current_image_size,primed_coords,current_image)
 
-#     ## transform the locations
-#     primed_coords = functions.transform(number_of_elements,primed_coords,P)
+    ## transform the locations
+    primed_coords = functions.transform(number_of_elements,primed_coords,P)
 
-#     print("primed y")
-#     print(np.amin(primed_coords[:,0]))
-#     print(np.amax(primed_coords[:,0]))
-#     print("primed x")
-#     print(np.amin(primed_coords[:,1]))
-#     print(np.amax(primed_coords[:,1]))
+    print("primed y")
+    print(np.amin(primed_coords[:,0]))
+    print(np.amax(primed_coords[:,0]))
+    print("primed x")
+    print(np.amin(primed_coords[:,1]))
+    print(np.amax(primed_coords[:,1]))
     
-#     ## plot the new image on the canvas
-#     canvas = functions.place_image(number_of_elements,canvas,primed_coords,origin_r,origin_c)
+    ## plot the new image on the canvas
+    canvas = functions.place_image(number_of_elements,canvas,primed_coords,origin_r,origin_c)
 
 plt.figure()
 plt.imshow(canvas,cmap='gray')

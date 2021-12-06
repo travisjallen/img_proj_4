@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.20)  5 DEC 2021 22:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.20)  6 DEC 2021 09:22
 entering extended mode
 **./ImgReport4.tex
 (ImgReport4.tex
@@ -302,30 +302,74 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 [1
 
-{C:/Users/travi/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2] [3]
-[4] (ImgReport4.aux) ) 
+{C:/Users/travi/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
+<test_images/shelf_4_correspondences.png, id=15, 758.835pt x 469.755pt>
+File: test_images/shelf_4_correspondences.png Graphic file (type png)
+<use test_images/shelf_4_correspondences.png>
+Package pdftex.def Info: test_images/shelf_4_correspondences.png  used on input
+ line 33.
+(pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
+<test_images/shelf_10_correspondences.png, id=17, 758.835pt x 542.025pt>
+File: test_images/shelf_10_correspondences.png Graphic file (type png)
+<use test_images/shelf_10_correspondences.png>
+Package pdftex.def Info: test_images/shelf_10_correspondences.png  used on inpu
+t line 39.
+(pdftex.def)             Requested size: 469.75499pt x 335.54752pt.
+ [3 <./test_images/shelf_4_correspondences.png>]
+<test_images/sign_4_correspondences.png, id=22, 758.835pt x 469.755pt>
+File: test_images/sign_4_correspondences.png Graphic file (type png)
+<use test_images/sign_4_correspondences.png>
+Package pdftex.def Info: test_images/sign_4_correspondences.png  used on input 
+line 48.
+(pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
+ [4 <./test_images/shelf_10_correspondences.png>]
+<test_images/sign_12_correspondences.png, id=27, 758.835pt x 469.755pt>
+File: test_images/sign_12_correspondences.png Graphic file (type png)
+<use test_images/sign_12_correspondences.png>
+Package pdftex.def Info: test_images/sign_12_correspondences.png  used on input
+ line 54.
+(pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
+ [5 <./test_images/sign_4_correspondences.png>] [6 <./test_images/sign_12_corre
+spondences.png>]
+File: test_images/sign_4_correspondences.png Graphic file (type png)
+<use test_images/sign_4_correspondences.png>
+Package pdftex.def Info: test_images/sign_4_correspondences.png  used on input 
+line 95.
+(pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
+<test_images/sign_4_1_correspondences.png, id=36, 758.835pt x 469.755pt>
+File: test_images/sign_4_1_correspondences.png Graphic file (type png)
+<use test_images/sign_4_1_correspondences.png>
+Package pdftex.def Info: test_images/sign_4_1_correspondences.png  used on inpu
+t line 101.
+(pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
+ [7] [8 <./test_images/sign_4_1_correspondences.png>]
+(ImgReport4.aux) ) 
 Here is how much of TeX's memory you used:
- 3825 strings out of 479334
- 56344 string characters out of 2857084
- 359855 words of memory out of 3000000
- 21244 multiletter control sequences out of 15000+200000
+ 3859 strings out of 479334
+ 57596 string characters out of 2857084
+ 368855 words of memory out of 3000000
+ 21271 multiletter control sequences out of 15000+200000
  412142 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,6n,74p,997b,215s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\travi\AppData\Local\MiKTeX\fonts/pk/ljfour/jkn
-appen/ec/dpi600\tcrm1000.pk><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/travi/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/travi/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/travi/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/travi/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/User
-s/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-<C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmtt10.pfb>
-Output written on ImgReport4.pdf (4 pages, 106511 bytes).
+ 68i,7n,74p,997b,230s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\travi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
+n/ec/dpi600\tcrm1000.pk><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/amsfonts/cm/cmbx10.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/travi/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/travi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/travi/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/t
+ravi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr7.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmsy7.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/travi/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ImgReport4.pdf (8 pages, 4173923 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
