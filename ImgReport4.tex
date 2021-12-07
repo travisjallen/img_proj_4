@@ -34,13 +34,8 @@
 	\newpage
 	
 	\subsection{Panoramic Images}
-		I used the following panoramic images to see how the algorithm performs on them. I compared the results with 4 and 10 correspondence points.
-	
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=6.5in]{test_images/shelf_4_correspondences.png}
-		\caption{Bookshelf with 4 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
-	\end{figure}
+		I used the following panoramic images to see how the algorithm performs on them. This is using 10 correspondence points.
+
 	
 	\begin{figure}[H]
 		\centering
@@ -48,14 +43,16 @@
 		\caption{Bookshelf with 10 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
 	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/shelf_10_floor.png}
+		\caption{Mosaiced bookshelf with 10 correspondences. }
+	\end{figure}
+
+\newpage
+
 	\subsection{Planar Images}
-		I used the following planar images to see how the algorithm performs on them. To construct them, I simply took a single image and cropped it twice to keep different, but overlapping parts of the image. Here I used 4 and 12 correspondence points, shown below.
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=6.5in]{test_images/sign_4_correspondences.png}
-			\caption{Trail sign with 4 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
-		\end{figure}
+		I used the following planar images to see how the algorithm performs on them. To construct them, I simply took a single image and cropped it twice to keep different, but overlapping parts of the image. Here I used 12 correspondence points, shown below.		
 		
 		\begin{figure}[H]
 			\centering
@@ -63,11 +60,79 @@
 			\caption{Trail sign with 12 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
 		\end{figure}
 	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=6.5in]{test_images/sign_12_floor.png}
+			\caption{Mosaiced trail sign with 12 correspondences. }
+		\end{figure}
+
+	\newpage
+		
 	\subsection{Number of Correspondences}
+	I experimented with the number of correspondence points on both the planar and panoramic images. 
+	
+	\subsubsection{Planar Images}
+	\vskip 10pt
+	I tried to use 4 correspondence points on the planar image shown above. I chose the number 4 because it is the theoretical minimum number of correspondence points needed to solve for the transformation. This worked with varying degrees of success. Some combinations of 4 of my total 12 correspondence points produced a mostly valid transformation, shown below. However some combinations of correspondence points did not work as well and would have produced a very large and ugly image. I attribute this to the correspondence points being chosen by hand, so they were not extremely accurate. 
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/sign_4_correspondences.png}
+		\caption{Trail sign with 4 correspondences.}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/sign_4_floor.png}
+		\caption{Mosaiced trail sign with 4 correspondences. Things don't line up very well with so few correspondences. }
+	\end{figure}
+
 	\newpage
 	
+	Shown below again for clarity's sake is the same pair of images but constructed with a transformation informed by 12 correspondence points. This seemed to act as a filter on my imprecise correspondence point picking and generally make the image look better.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/sign_12_floor.png}
+		\caption{Mosaiced trail sign with 12 correspondences. This lines up much better.}
+	\end{figure}
+	
+	\newpage
+	
+	\subsubsection{Panoramic Images}
+	I attempted to use 4 correspondence points on the panoramic images shown above, but I was unsuccessful. I encountered the same issue I described in the section on planar images where the transformation that was produced made too large of an image (orders of magnitude larger than the original images), so I added one correspondence point and successfully made a mosaic with 5 points. This is shown below.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/shelf_5_correspondences.png}
+		\caption{Bookshelf with 5 correspondences. I picked this image because it contains many corners, so accurately picking correspondences was straightforward.}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/shelf_5_floor.png}
+		\caption{Mosaiced bookshelf with 5 correspondences.}
+	\end{figure}
+	
+	\newpage
+	
+	Shown again for clarity are the results from above with 10 correspondence points. In general, the image lines up slightly better, especially near the bottom.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/shelf_10_correspondences.png}
+		\caption{Bookshelf with 10 correspondences. }
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=6.5in]{test_images/shelf_10_floor.png}
+		\caption{Mosaiced bookshelf with 10 correspondences. }
+	\end{figure}
 \section{Questions}
 	\subsection{How many control points does it take to get a `good' transformation between images?}
+	My results in the preceding sections indicate that having more correspondence points results in a better image mosaic. Solving a system with SVD provides the least-squares solution, so this comports with our intuition regarding least-squares solutions and the central limit theorem, wherein the ``quality" or ``truth" of a prediction improves with the number of data points that are used to make it. From my own initial experimentation it seems that 8 or greater correspondence points capture enough of the truth of the perspective equivalence to construct a convincing image.
+	
 	\subsection{How does the algorithm behave at the theoretical minimum of the number of control points?}
 		The theoretical minimum number of correspondence points is 4 because that is the minimum possible number of points that allows the matrix below to have full rank. If this matrix has at least rank 8 and the number of rows is equal to the rank, then the system has an analytical solution. If the system has at least rank 8 and the number of rows is greater than the rank, then the system has a least-squares solution.
 		\[\left(\begin{array}{cccccccc}

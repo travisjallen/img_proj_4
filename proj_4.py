@@ -9,6 +9,7 @@ import numpy as np
 from skimage import io
 import matplotlib.pyplot as plt
 from skimage import exposure
+from skimage import filters
 
 ## import json reader
 from read_json import read_json
@@ -17,7 +18,7 @@ from read_json import read_json
 import functions
 
 ## read the json file
-corra,corrb,image_names,corrs = read_json("sign_params_4_mismatch.json")
+corra,corrb,image_names,corrs = read_json("sign_params_12.json")
 
 ## correct the image names
 for i in range(len(image_names)):
@@ -67,7 +68,7 @@ for i in range(num_images - 1):
     current_image_size = np.shape(current_image)
     
     ## match the histogram of the new image to the first image
-    # current_image = exposure.match_histograms(current_image,img_0)
+    current_image = exposure.match_histograms(current_image,img_0)
 
     # sometimes some small numbers get dragged around. Make them 0
     epsilon = 0.01
@@ -128,21 +129,19 @@ for i in range(num_images - 1):
     ## transform the image and place
     canvas,y_prime,x_prime = functions.transform(current_image,canvas,P,origin_r,origin_c)
     
-    # new_canvas = functions.trim_canvas(canvas)
 
-    # plt.figure()
-    # plt.imshow(new_canvas,cmap='gray')
-    # plt.axis('off')
-    # plt.show()
-
-
-new_canvas = functions.trim_canvas(canvas)
-
-plt.figure(figsize=(12,7))
-plt.imshow(new_canvas,cmap='gray')
+canvas = functions.feather(canvas,x_prime,y_prime,origin_c,origin_r)
+canvas = functions.trim_canvas(canvas)
+print(np.amax(canvas))
+ax = plt.figure(figsize=(13,10))
+plt.imshow(canvas,cmap='gray')
+# plt.scatter(y_prime[:,0]+origin_c,x_prime[:,0]+origin_r,c='#ff7f0e')
+# plt.scatter(y_prime[:,-1]+origin_c,x_prime[:,-1]+origin_r,c='#ff7f0e')
+# plt.scatter(y_prime[0,:]+origin_c,x_prime[0,:]+origin_r,c='#ff7f0e')
+# plt.scatter(y_prime[-1,:]+origin_c,x_prime[-1,:]+origin_r,c='#ff7f0e')
 plt.axis('off')
 plt.tight_layout()
-plt.savefig('test_images/sign_4_mismatch.png')
+plt.savefig('test_images/sign_12_floor.png')
 plt.show()
 
 
