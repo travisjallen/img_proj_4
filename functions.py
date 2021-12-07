@@ -25,7 +25,6 @@ def svd_solve(A,b):
 
 
 
-
 def transform(image,canvas,P,origin_r,origin_c):
     '''Takes image, canvas, P matrix, location of image origin, and places perspectively equivalent transformed image on canvas.'''
     ## make new coordinate arrays
@@ -54,6 +53,7 @@ def transform(image,canvas,P,origin_r,origin_c):
             x_prime[i,j] = new_coords[1]
 
     return canvas,y_prime,x_prime
+
 
 
 def mosaic_interp(P,image,x_prime,y_prime):

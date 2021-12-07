@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.20)  6 DEC 2021 17:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.4.20)  6 DEC 2021 21:52
 entering extended mode
 **./ImgReport4.tex
 (ImgReport4.tex
@@ -303,143 +303,154 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/travi/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
+(ImgReport4.toc)
+\tf@toc=\write3
+\openout3 = `ImgReport4.toc'.
 
-LaTeX Warning: Reference `contrast' on page 2 undefined on input line 25.
-
-<test_images/hist_match.png, id=8, 867.24pt x 505.89pt>
+ [2] [3]
+<test_images/interp_method.png, id=23, 878.19pt x 460.338pt>
+File: test_images/interp_method.png Graphic file (type png)
+<use test_images/interp_method.png>
+Package pdftex.def Info: test_images/interp_method.png  used on input line 71.
+(pdftex.def)             Requested size: 469.75499pt x 246.23976pt.
+ [4 <./test_images/interp_method.png>]
+<test_images/hist_match.png, id=29, 867.24pt x 505.89pt>
 File: test_images/hist_match.png Graphic file (type png)
 <use test_images/hist_match.png>
-Package pdftex.def Info: test_images/hist_match.png  used on input line 29.
+Package pdftex.def Info: test_images/hist_match.png  used on input line 83.
 (pdftex.def)             Requested size: 469.75499pt x 274.02563pt.
-[2 <./test_images/hist_match.png>]
-<test_images/shelf_10_correspondences.png, id=18, 758.835pt x 542.025pt>
+ [5 <./test_images/hist_match.png>]
+<test_images/shelf_10_correspondences.png, id=34, 758.835pt x 542.025pt>
 File: test_images/shelf_10_correspondences.png Graphic file (type png)
 <use test_images/shelf_10_correspondences.png>
 Package pdftex.def Info: test_images/shelf_10_correspondences.png  used on inpu
-t line 42.
+t line 95.
 (pdftex.def)             Requested size: 469.75499pt x 335.54752pt.
-<test_images/shelf_10_floor.png, id=19, 939.51pt x 722.7pt>
+<test_images/shelf_10_floor.png, id=35, 939.51pt x 722.7pt>
 File: test_images/shelf_10_floor.png Graphic file (type png)
 <use test_images/shelf_10_floor.png>
-Package pdftex.def Info: test_images/shelf_10_floor.png  used on input line 48.
-
+Package pdftex.def Info: test_images/shelf_10_floor.png  used on input line 101
+.
 (pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
- [3 <./test_images/shelf_10_correspondences.png>] [4 <./test_images/shelf_10_fl
+ [6 <./test_images/shelf_10_correspondences.png>] [7 <./test_images/shelf_10_fl
 oor.png>]
-<test_images/sign_12_correspondences.png, id=28, 758.835pt x 469.755pt>
+<test_images/sign_12_correspondences.png, id=45, 758.835pt x 469.755pt>
 File: test_images/sign_12_correspondences.png Graphic file (type png)
 <use test_images/sign_12_correspondences.png>
 Package pdftex.def Info: test_images/sign_12_correspondences.png  used on input
- line 59.
+ line 114.
 (pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
-<test_images/sign_12_floor.png, id=29, 939.51pt x 722.7pt>
+<test_images/sign_12_floor.png, id=46, 939.51pt x 722.7pt>
 File: test_images/sign_12_floor.png Graphic file (type png)
 <use test_images/sign_12_floor.png>
-Package pdftex.def Info: test_images/sign_12_floor.png  used on input line 65.
+Package pdftex.def Info: test_images/sign_12_floor.png  used on input line 120.
+
 (pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
- [5 <./test_images/sign_12_correspondences.png>] [6 <./test_images/sign_12_floo
-r.png>]
-<test_images/sign_4_correspondences.png, id=38, 758.835pt x 469.755pt>
+ [8 <./test_images/sign_12_correspondences.png>]
+[9 <./test_images/sign_12_floor.png>]
+<test_images/sign_4_correspondences.png, id=55, 758.835pt x 469.755pt>
 File: test_images/sign_4_correspondences.png Graphic file (type png)
 <use test_images/sign_4_correspondences.png>
 Package pdftex.def Info: test_images/sign_4_correspondences.png  used on input 
-line 80.
+line 136.
 (pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
-<test_images/sign_4_floor.png, id=39, 939.51pt x 722.7pt>
+<test_images/sign_4_floor.png, id=56, 939.51pt x 722.7pt>
 File: test_images/sign_4_floor.png Graphic file (type png)
 <use test_images/sign_4_floor.png>
-Package pdftex.def Info: test_images/sign_4_floor.png  used on input line 87.
+Package pdftex.def Info: test_images/sign_4_floor.png  used on input line 143.
 (pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
- [7 <./test_images/sign_4_correspondences.png>] [8 <./test_images/sign_4_floor.
-png>]
+ [10 <./test_images/sign_4_correspondences.png>] [11 <./test_images/sign_4_floo
+r.png>]
 File: test_images/sign_12_floor.png Graphic file (type png)
 <use test_images/sign_12_floor.png>
-Package pdftex.def Info: test_images/sign_12_floor.png  used on input line 97.
+Package pdftex.def Info: test_images/sign_12_floor.png  used on input line 153.
+
 (pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
- [9]
-<test_images/shelf_5_correspondences.png, id=52, 758.835pt x 542.025pt>
+ [12]
+<test_images/shelf_5_correspondences.png, id=68, 758.835pt x 542.025pt>
 File: test_images/shelf_5_correspondences.png Graphic file (type png)
 <use test_images/shelf_5_correspondences.png>
 Package pdftex.def Info: test_images/shelf_5_correspondences.png  used on input
- line 108.
+ line 164.
 (pdftex.def)             Requested size: 469.75499pt x 335.54752pt.
-<test_images/shelf_5_floor.png, id=53, 939.51pt x 722.7pt>
+<test_images/shelf_5_floor.png, id=69, 939.51pt x 722.7pt>
 File: test_images/shelf_5_floor.png Graphic file (type png)
 <use test_images/shelf_5_floor.png>
-Package pdftex.def Info: test_images/shelf_5_floor.png  used on input line 114.
+Package pdftex.def Info: test_images/shelf_5_floor.png  used on input line 170.
 
 (pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
- [10 <./test_images/shelf_5_correspondences.png>] [11 <./test_images/shelf_5_fl
+ [13 <./test_images/shelf_5_correspondences.png>] [14 <./test_images/shelf_5_fl
 oor.png>]
 File: test_images/shelf_10_correspondences.png Graphic file (type png)
 <use test_images/shelf_10_correspondences.png>
 Package pdftex.def Info: test_images/shelf_10_correspondences.png  used on inpu
-t line 123.
+t line 179.
 (pdftex.def)             Requested size: 469.75499pt x 335.54752pt.
 File: test_images/shelf_10_floor.png Graphic file (type png)
 <use test_images/shelf_10_floor.png>
-Package pdftex.def Info: test_images/shelf_10_floor.png  used on input line 129
+Package pdftex.def Info: test_images/shelf_10_floor.png  used on input line 185
 .
 (pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
- [12]
-[13]
-File: test_images/sign_4_correspondences.png Graphic file (type png)
-<use test_images/sign_4_correspondences.png>
-Package pdftex.def Info: test_images/sign_4_correspondences.png  used on input 
-line 168.
-(pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
-<test_images/sign_4_1_correspondences.png, id=69, 758.835pt x 469.755pt>
-File: test_images/sign_4_1_correspondences.png Graphic file (type png)
-<use test_images/sign_4_1_correspondences.png>
-Package pdftex.def Info: test_images/sign_4_1_correspondences.png  used on inpu
-t line 174.
-(pdftex.def)             Requested size: 469.75499pt x 290.80785pt.
- [14]
-
-LaTeX Warning: Reference `contrast' on page 15 undefined on input line 183.
-
-<test_images/no_hist_match.png, id=78, 867.24pt x 505.89pt>
+ [15] [16]
+<test_images/shelf_10_mismatch.png, id=85, 939.51pt x 722.7pt>
+File: test_images/shelf_10_mismatch.png Graphic file (type png)
+<use test_images/shelf_10_mismatch.png>
+Package pdftex.def Info: test_images/shelf_10_mismatch.png  used on input line 
+233.
+(pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
+ [17]
+<test_images/no_hist_match.png, id=89, 867.24pt x 505.89pt>
 File: test_images/no_hist_match.png Graphic file (type png)
 <use test_images/no_hist_match.png>
-Package pdftex.def Info: test_images/no_hist_match.png  used on input line 190.
+Package pdftex.def Info: test_images/no_hist_match.png  used on input line 246.
 
 (pdftex.def)             Requested size: 469.75499pt x 274.02563pt.
-[15 <./test_images/sign_4_1_correspondences.png>]
+
+[18 <./test_images/shelf_10_mismatch.png>]
 File: test_images/hist_match.png Graphic file (type png)
 <use test_images/hist_match.png>
-Package pdftex.def Info: test_images/hist_match.png  used on input line 196.
+Package pdftex.def Info: test_images/hist_match.png  used on input line 252.
 (pdftex.def)             Requested size: 469.75499pt x 274.02563pt.
- [16 <./test_images/no_hist_match.png>] [17] (ImgReport4.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+<test_images/shelf_10_orange.png, id=94, 268.1217pt x 245.718pt>
+File: test_images/shelf_10_orange.png Graphic file (type png)
+<use test_images/shelf_10_orange.png>
+Package pdftex.def Info: test_images/shelf_10_orange.png  used on input line 26
+0.
+(pdftex.def)             Requested size: 325.215pt x 298.06955pt.
+ [19 <./test_images/no_hist_match.png>]
+<test_images/example_raw.png, id=100, 939.51pt x 722.7pt>
+File: test_images/example_raw.png Graphic file (type png)
+<use test_images/example_raw.png>
+Package pdftex.def Info: test_images/example_raw.png  used on input line 266.
+(pdftex.def)             Requested size: 469.75499pt x 361.3491pt.
+ [20 <./test_images/shelf_10_orange.png>] [21 <./test_images/example_raw.png>] 
+[22] (ImgReport4.aux) ) 
 Here is how much of TeX's memory you used:
- 3896 strings out of 479334
- 58674 string characters out of 2857084
- 367857 words of memory out of 3000000
- 21302 multiletter control sequences out of 15000+200000
- 412142 words of font info for 61 fonts, out of 3000000 for 9000
+ 3917 strings out of 479334
+ 59272 string characters out of 2857084
+ 377868 words of memory out of 3000000
+ 21318 multiletter control sequences out of 15000+200000
+ 411796 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,7n,74p,997b,230s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\travi\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1000.pk><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/travi/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/travi/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/travi/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/travi/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/t
-ravi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/
-Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmsy7.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmti10.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmtt10.pfb>
-Output written on ImgReport4.pdf (17 pages, 7762491 bytes).
+ 68i,8n,74p,1411b,230s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\travi\AppData\Local\MiKTeX\fonts/pk/ljfour/jk
+nappen/ec/dpi600\tcrm1000.pk><C:/Users/travi/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/travi/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/travi/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/travi/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/trav
+i/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Us
+ers/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr12.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmr17.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr7.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/travi/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/travi/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on ImgReport4.pdf (22 pages, 8210349 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
+ 155 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

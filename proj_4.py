@@ -18,7 +18,7 @@ from read_json import read_json
 import functions
 
 ## read the json file
-corra,corrb,image_names,corrs = read_json("sign_params_12.json")
+corra,corrb,image_names,corrs,output = read_json("mosaic_params.json")
 
 ## correct the image names
 for i in range(len(image_names)):
@@ -40,7 +40,7 @@ img_0_cols = img_0_size[1]
 num_images = len(image_names)
 
 ## establish a factor of safety
-fos = num_images + 5
+fos = num_images + 2
 canvas = np.zeros((fos*img_0_rows,fos*img_0_cols))
 # canvas[:,:,:] = 0.5
 
@@ -128,11 +128,11 @@ for i in range(num_images - 1):
 
     ## transform the image and place
     canvas,y_prime,x_prime = functions.transform(current_image,canvas,P,origin_r,origin_c)
+    canvas = functions.feather(canvas,x_prime,y_prime,origin_c,origin_r)
     
 
-canvas = functions.feather(canvas,x_prime,y_prime,origin_c,origin_r)
 canvas = functions.trim_canvas(canvas)
-print(np.amax(canvas))
+
 ax = plt.figure(figsize=(13,10))
 plt.imshow(canvas,cmap='gray')
 # plt.scatter(y_prime[:,0]+origin_c,x_prime[:,0]+origin_r,c='#ff7f0e')
@@ -141,7 +141,7 @@ plt.imshow(canvas,cmap='gray')
 # plt.scatter(y_prime[-1,:]+origin_c,x_prime[-1,:]+origin_r,c='#ff7f0e')
 plt.axis('off')
 plt.tight_layout()
-plt.savefig('test_images/sign_12_floor.png')
+plt.savefig(output)
 plt.show()
 
 

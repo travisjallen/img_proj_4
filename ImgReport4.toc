@@ -1,0 +1,18 @@
+\contentsline {section}{\numberline {1}Preliminaries}{3}{}%
+\contentsline {section}{\numberline {2}Methods}{3}{}%
+\contentsline {section}{\numberline {3}Experiments}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Given Dataset}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Panoramic Images}{6}{}%
+\contentsline {subsection}{\numberline {3.3}Planar Images}{8}{}%
+\contentsline {subsection}{\numberline {3.4}Number of Correspondences}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.1}Planar Images}{10}{}%
+\contentsline {subsubsection}{\numberline {3.4.2}Panoramic Images}{13}{}%
+\contentsline {section}{\numberline {4}Questions}{17}{}%
+\contentsline {subsection}{\numberline {4.1}How many control points does it take to get a `good' transformation between images?}{17}{}%
+\contentsline {subsection}{\numberline {4.2}How does the algorithm behave at the theoretical minimum of the number of control points?}{17}{}%
+\contentsline {subsection}{\numberline {4.3}From your experiments, how does the accuracy of the control points affect the results?}{17}{}%
+\contentsline {section}{\numberline {5}Details}{18}{}%
+\contentsline {subsection}{\numberline {5.1}Contrast}{18}{}%
+\contentsline {subsection}{\numberline {5.2}Feathering}{20}{}%
+\contentsline {subsection}{\numberline {5.3}Image Size}{21}{}%
+\contentsline {section}{\numberline {6}Notes on Implementation}{22}{}%

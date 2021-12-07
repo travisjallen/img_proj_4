@@ -45,5 +45,6 @@ def read_json(filename):
 
     ## return the correspondences and the image names
     image_names = data['Input files']
+    output = data['Output file']
 
-    return corra,corrb,image_names,corrs
+    return corra,corrb,image_names,corrs,output
